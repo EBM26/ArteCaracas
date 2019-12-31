@@ -11,7 +11,7 @@
 	<style>
 		 		/* general styling rules */
 		*{text-decoration: none; margin: 0; padding: 0; max-width: 100%;}
-		html,body{margin: 0; padding: 0;  font-family: 'Lato', sans-serif; color: #415066; font-size: 16px;}
+		html,body{margin: 0; padding: 0;  font-family: 'Lato', sans-serif; color: #081e79; font-size: 16px;}
 		img{border: none;}
 		li{list-style-type: none;}
 		div{display: block; margin: 0; padding: 0;}
@@ -74,16 +74,34 @@
 		.padbot30{padding-bottom: 30px;}
 		.padbot50{padding-bottom: 50px;}
 		.padbot80{padding-bottom: 80px;}
+		.padtop120{padding-top: 120px;}
 		.padding500{padding: 50px 0;}
 		.padding700{padding: 70px 0;}
 		.desktopIpadHide{display: none;}
+		.siteBlue{color: #081e79;}
+		.siteYellow{color: #f7cf46;}
+		.siteRed{color: #bf2c30;}
 		
 		/* header styling */
 		header{position: fixed; z-index: 99; background: #fff; width: 100%; top: 0;
 		       box-shadow: 0 0 9px 0 rgba(0,0,0,0.5); margin-bottom: 30px; padding: 10px 0;}
 		.headerLogo{max-width: 120px;}
 
-		h1{font-size: 28px; margin-bottom: 15px; letter-spacing: 1px; color: #fff; font-family: 'Architects Daughter', cursive;}
+		#overlay{width: 100%; height: 100%; position: fixed; top: 0; left: 0; right: 0; bottom: 0; cursor: pointer; background-color:rgba(119, 119, 119, 0.7); display: flex; justify-content: center; align-items: center; -webkit-animation: fadein .5s; animation: fadein .5s;
+			 z-index: 200; overflow: scroll;}
+		.bigPic{max-width: 800px; margin: auto; background: #fff; padding: 40px;}
+
+
+		.bodyRow{padding: 120px 0 80px;}	
+		h1{font-size: 48px; letter-spacing: 1px; font-family: 'Architects Daughter', cursive; text-align: center; margin: 35px 0;}
+		.picture-row{display: flex; margin-bottom: 40px;}
+		.frame{flex: 1; background: #fff; padding: 2%; border: 15px solid #f7cf46; 
+			  text-align: center; box-shadow: 0 10px 7px -5px rgba(0, 0, 0, 0.3);
+			  cursor: pointer; transition: all .2s ease-in-out;}
+		.mid-frame{margin: 0 3%; border-color: #081e79;}
+		.last-frame{border-color: #bf2c30;}
+		.frame:hover{transform: scale(1.1);}
+		.topP{color: #333; font-size: 22px; margin-bottom: 40px;}
 
 		footer{}
 
@@ -114,14 +132,59 @@
 			<div class="row">
 				<div class="container">
 					<img src="images/Arte-Caracas-Logo.jpg" alt="Arte Caracas Logo" class="headerLogo">
-					
+					<div class="rightHeader">
+
+						<div id="CTA"></div>
+					</div>
+					<div class="clear"></div>
 				</div><!-- container -->
 			</div><!-- row -->
 		</header>
-		<div id="hero-image">
-
-		<div class="row">
+		<div id="overlay">
+			<div class="bigPic">
+				<img src="images/AlirioOramas1.jpg" alt="">
+				<p></p>
+			</div>
+		</div>
+		<div class="row bodyRow">
 			<div class="container">
+				<h1>Arte Caracas</h1> 
+				<p class="topP"><span class="Spanlang">Somos una galería de arte ubicada en Caracas y nos especializamos en arte venezolano y latinoamericano. Contamos con obras de más de 20 artistas. Entre los jóvenes se destacan Yobel Parra, Antonio Montes de Oca, Mauricio Sanchez, Julio Diaz y Jesus Mendoza.  También contamos con obras de maestros latinoamericanos tales como Mateo Manaure, Héctor Poleo, Genaro Moreno, Francisco Narváez, Cesar Rengifo, Omar Carreño, Mariano Rodríguez, Alejandro Otero, Jacobo Borges, Manuel Quintana Castillo, entre otros.</span></p>
+			<div class="picture-row">
+				<div class="frame">
+		   		  <img class="" src="images/AlirioOramas1.jpg" alt="" />
+		   		</div>
+		   		<div class="frame mid-frame">
+		   		  <img class="" src="images/LuisAfredo1.jpg" alt="" />
+		   		</div>
+		   		<div class="frame last-frame">
+		   		  <img class="" src="images/ManuelCastillo1.jpg" alt="" />
+		   		</div>
+		    </div>
+
+		    <div class="picture-row">
+				<div class="frame">
+		   		  <img class="" src="images/AlirioOramas1.jpg" alt="" />
+		   		</div>
+		   		<div class="frame mid-frame">
+		   		  <img class="" src="images/LuisAfredo1.jpg" alt="" />
+		   		</div>
+		   		<div class="frame last-frame">
+		   		  <img class="" src="images/ManuelCastillo1.jpg" alt="" />
+		   		</div>
+		    </div>
+
+		    <div class="picture-row">
+				<div class="frame">
+		   		  <img class="" src="images/AlirioOramas1.jpg" alt="" />
+		   		</div>
+		   		<div class="frame mid-frame">
+		   		  <img class="" src="images/LuisAfredo1.jpg" alt="" />
+		   		</div>
+		   		<div class="frame last-frame">
+		   		  <img class="" src="images/ManuelCastillo1.jpg" alt="" />
+		   		</div>
+		    </div>
 
 			</div><!-- container -->
 		</div><!-- row -->
@@ -132,7 +195,13 @@
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script>
-			
+			$(document).ready(function() {
+
+				$(".frame").click(function() {
+
+				});
+
+			});		
 		</script>
 	</body>
 	</html>
