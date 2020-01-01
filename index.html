@@ -87,9 +87,8 @@
 		       box-shadow: 0 0 9px 0 rgba(0,0,0,0.5); margin-bottom: 30px; padding: 10px 0;}
 		.headerLogo{max-width: 120px;}
 
-		#overlay{width: 100%; height: 100%; position: fixed; top: 0; left: 0; right: 0; bottom: 0; cursor: pointer; background-color:rgba(119, 119, 119, 0.7); display: flex; justify-content: center; align-items: center; -webkit-animation: fadein .5s; animation: fadein .5s; z-index: 200; overflow: scroll; padding: 40px 0;}
-		.bigPic{max-width: 45%; margin: auto; background: #fff; padding: 40px;}
-		.bigPic p{color: #333; font-size: 18px; margin-top: 10px;}
+		#overlay{width: 100%; height: 100%; position: fixed; top: 0; left: 0; right: 0; bottom: 0; cursor: pointer; background-color:rgba(119, 119, 119, 0.7); display: none; justify-content: center; align-items: center; -webkit-animation: fadein .5s; animation: fadein .5s; z-index: 200; overflow: scroll;}
+		.bigPic{max-width: 45%; margin: auto; position: absolute; padding: 40px; background: #fff;}
 		#closeOverlay{  position: absolute;  content: "\00d7"; color: #fff;}
 
 
@@ -99,10 +98,13 @@
 		.frame{flex: 1; background: #fff; padding: 2%; border: 15px solid #f7cf46; 
 			  text-align: center; box-shadow: 0 10px 7px -5px rgba(0, 0, 0, 0.3);
 			  cursor: pointer; transition: all .2s ease-in-out;}
+		.frame p, .bigPic p{color: #333; font-size: 18px; margin-top: 10px; text-align: left;}
 		.mid-frame{margin: 0 3%; border-color: #081e79;}
 		.last-frame{border-color: #bf2c30;}
 		.frame:hover{transform: scale(1.1);}
 		.topP{color: #333; font-size: 22px; margin-bottom: 40px;}
+		.artistIcon{max-width: 20px; margin-right: 5px; vertical-align: -1px;}
+		.sizeIcon{max-width: 16px; margin-right: 5px; vertical-align: -1px;}
 
 		footer{}
 
@@ -144,11 +146,11 @@
 		<div id="overlay">
 			<div id="closeOverlay"></div>
 			<div class="bigPic">
-				<img src="images/AlirioOramas1.jpg" alt="">
-				<p class="artist">> Artista: Alirio Oramas</p>
-				<p class="dimensions">> Dimensiones: 80 X 90 CMS</p>
-				<p class="paintType">> Tipo: Acrilico / Tela</p>
-				<p class="year">> Año: 1981</p>
+				<img class="bigImage" src="" alt="" />
+		   		<p><img src="images/artistIcon.svg" alt="artist icon" class="artistIcon"> <span class="bigArtist"></span></p>
+				<p><img src="images/sizeIcon.png" alt="dimensions icon" class="sizeIcon"> <span class="bigDimensions"></span></p>
+				<p><img src="images/paintingIcon.svg" alt="painting icon" class="sizeIcon"> <span class="bigPaintType"></span></p>
+				<p><img src="images/calendarIcon.png" alt="calendar icon" class="sizeIcon"> <span class="bigYear"></span></p>
 			</div>
 		</div>
 		<div class="row bodyRow">
@@ -158,36 +160,72 @@
 			<div class="picture-row">
 				<div class="frame">
 		   		  <img class="" src="images/AlirioOramas1.jpg" alt="" />
+		   		  <p class="artist"><img src="images/artistIcon.svg" alt="artist icon" class="artistIcon"> Alirio Oramas</p>
+				  <p class="dimensions"><img src="images/sizeIcon.png" alt="dimensions icon" class="sizeIcon"> 80 X 90 CMS</p>
+				  <p class="paintType"><img src="images/paintingIcon.svg" alt="painting icon" class="sizeIcon"> Acrilico / Tela</p>
+				  <p class="year"><img src="images/calendarIcon.png" alt="calendar icon" class="sizeIcon"> 1981</p>
 		   		</div>
 		   		<div class="frame mid-frame">
 		   		  <img class="" src="images/LuisAfredo1.jpg" alt="" />
+		   		  <p class="artist"><img src="images/artistIcon.svg" alt="artist icon" class="artistIcon"> Manuel Quintana Castillo</p>
+				  <p class="dimensions"><img src="images/sizeIcon.png" alt="dimensions icon" class="sizeIcon"> 100 X 100 CMS</p>
+				  <p class="paintType"><img src="images/paintingIcon.svg" alt="painting icon" class="sizeIcon"> Acrilico / Tela</p>
+				  <p class="year"><img src="images/calendarIcon.png" alt="calendar icon" class="sizeIcon"> 1970</p>
 		   		</div>
 		   		<div class="frame last-frame">
 		   		  <img class="" src="images/ManuelCastillo1.jpg" alt="" />
+		   		  <p class="artist"><img src="images/artistIcon.svg" alt="artist icon" class="artistIcon"> Alirio Oramas</p>
+				  <p class="dimensions"><img src="images/sizeIcon.png" alt="dimensions icon" class="sizeIcon"> 80 X 90 CMS</p>
+				  <p class="paintType"><img src="images/paintingIcon.svg" alt="painting icon" class="sizeIcon"> Acrilico / Tela</p>
+				  <p class="year"><img src="images/calendarIcon.png" alt="calendar icon" class="sizeIcon"> 1981</p>
+		   		</div>
+		    </div>
+
+		   <div class="picture-row">
+				<div class="frame">
+		   		  <img class="" src="images/AlirioOramas1.jpg" alt="" />
+		   		  <p class="artist"><img src="images/artistIcon.svg" alt="artist icon" class="artistIcon"> Alirio Oramas</p>
+				  <p class="dimensions"><img src="images/sizeIcon.png" alt="dimensions icon" class="sizeIcon"> 80 X 90 CMS</p>
+				  <p class="paintType"><img src="images/paintingIcon.svg" alt="painting icon" class="sizeIcon"> Acrilico / Tela</p>
+				  <p class="year"><img src="images/calendarIcon.png" alt="calendar icon" class="sizeIcon"> 1981</p>
+		   		</div>
+		   		<div class="frame mid-frame">
+		   		  <img class="" src="images/LuisAfredo1.jpg" alt="" />
+		   		  <p class="artist"><img src="images/artistIcon.svg" alt="artist icon" class="artistIcon"> Manuel Quintana Castillo</p>
+				  <p class="dimensions"><img src="images/sizeIcon.png" alt="dimensions icon" class="sizeIcon"> 100 X 100 CMS</p>
+				  <p class="paintType"><img src="images/paintingIcon.svg" alt="painting icon" class="sizeIcon"> Acrilico / Tela</p>
+				  <p class="year"><img src="images/calendarIcon.png" alt="calendar icon" class="sizeIcon"> 1970</p>
+		   		</div>
+		   		<div class="frame last-frame">
+		   		  <img class="" src="images/ManuelCastillo1.jpg" alt="" />
+		   		  <p class="artist"><img src="images/artistIcon.svg" alt="artist icon" class="artistIcon"> Alirio Oramas</p>
+				  <p class="dimensions"><img src="images/sizeIcon.png" alt="dimensions icon" class="sizeIcon"> 80 X 90 CMS</p>
+				  <p class="paintType"><img src="images/paintingIcon.svg" alt="painting icon" class="sizeIcon"> Acrilico / Tela</p>
+				  <p class="year"><img src="images/calendarIcon.png" alt="calendar icon" class="sizeIcon"> 1981</p>
 		   		</div>
 		    </div>
 
 		    <div class="picture-row">
 				<div class="frame">
 		   		  <img class="" src="images/AlirioOramas1.jpg" alt="" />
+		   		  <p class="artist"><img src="images/artistIcon.svg" alt="artist icon" class="artistIcon"> Alirio Oramas</p>
+				  <p class="dimensions"><img src="images/sizeIcon.png" alt="dimensions icon" class="sizeIcon"> 80 X 90 CMS</p>
+				  <p class="paintType"><img src="images/paintingIcon.svg" alt="painting icon" class="sizeIcon"> Acrilico / Tela</p>
+				  <p class="year"><img src="images/calendarIcon.png" alt="calendar icon" class="sizeIcon"> 1981</p>
 		   		</div>
 		   		<div class="frame mid-frame">
 		   		  <img class="" src="images/LuisAfredo1.jpg" alt="" />
+		   		  <p class="artist"><img src="images/artistIcon.svg" alt="artist icon" class="artistIcon"> Manuel Quintana Castillo</p>
+				  <p class="dimensions"><img src="images/sizeIcon.png" alt="dimensions icon" class="sizeIcon"> 100 X 100 CMS</p>
+				  <p class="paintType"><img src="images/paintingIcon.svg" alt="painting icon" class="sizeIcon"> Acrilico / Tela</p>
+				  <p class="year"><img src="images/calendarIcon.png" alt="calendar icon" class="sizeIcon"> 1970</p>
 		   		</div>
 		   		<div class="frame last-frame">
 		   		  <img class="" src="images/ManuelCastillo1.jpg" alt="" />
-		   		</div>
-		    </div>
-
-		    <div class="picture-row">
-				<div class="frame">
-		   		  <img class="" src="images/AlirioOramas1.jpg" alt="" />
-		   		</div>
-		   		<div class="frame mid-frame">
-		   		  <img class="" src="images/LuisAfredo1.jpg" alt="" />
-		   		</div>
-		   		<div class="frame last-frame">
-		   		  <img class="" src="images/ManuelCastillo1.jpg" alt="" />
+		   		  <p class="artist"><img src="images/artistIcon.svg" alt="artist icon" class="artistIcon"> Alirio Oramas</p>
+				  <p class="dimensions"><img src="images/sizeIcon.png" alt="dimensions icon" class="sizeIcon"> 80 X 90 CMS</p>
+				  <p class="paintType"><img src="images/paintingIcon.svg" alt="painting icon" class="sizeIcon"> Acrilico / Tela</p>
+				  <p class="year"><img src="images/calendarIcon.png" alt="calendar icon" class="sizeIcon"> 1981</p>
 		   		</div>
 		    </div>
 
