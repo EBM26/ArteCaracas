@@ -87,11 +87,11 @@
 		       box-shadow: 0 0 9px 0 rgba(0,0,0,0.5); margin-bottom: 30px; padding: 10px 0;}
 		.headerLogo{max-width: 120px;}
 
-		#overlay{width: 100%; height: 100%; position: fixed; top: 0; left: 0; right: 0; bottom: 0; cursor: pointer; background-color:rgba(119, 119, 119, 0.7); display: none; justify-content: center; align-items: center; -webkit-animation: fadein .5s; animation: fadein .5s; z-index: 200; overflow: scroll;}
+		#overlay{width: 100%; height: 100%; position: fixed; top: 0; left: 0; right: 0; bottom: 0; cursor: pointer; background-color:rgba(0, 0, 0, 0.9); display: none; justify-content: center; align-items: center; -webkit-animation: fadein .5s; animation: fadein .5s; z-index: 200; overflow: scroll;}
 		.bigPic{max-width: 45%; margin: auto; position: absolute; padding: 40px; background: #fff;}
 		#CTA{float: right; border-radius: 5px; background: #081e79; color: #f7cf46; font-size: 20px;
 		     text-align: center; padding: 10px 0; width: 200px; cursor: pointer; margin-top: 15px;
-		 	   transition: all .2s ease-in-out;}
+		 	   transition: all .2s ease-in-out; text-transform: uppercase; letter-spacing: 1px;}
 		#closeOverlay {position: absolute; display: inline-block; width: 50px; height: 50px; overflow: hidden;
 					  z-index: 1000; right: 15%; top: 5%;}
 		#closeOverlay:hover::before, #closeOverlay:hover::after{background: #bf2c30;}
@@ -118,6 +118,10 @@
 		.topP{color: #333; font-size: 22px; margin-bottom: 40px;}
 		.artistIcon{max-width: 20px; margin-right: 5px; vertical-align: -1px;}
 		.sizeIcon{max-width: 16px; margin-right: 5px; vertical-align: -1px;}
+		.mailLink{font-size: 22px;}
+		.mailLink:hover{color: #f7cf46;}
+		.emailIcon{max-width: 40px; vertical-align: middle; margin-right: 10px;}
+		#contact-div p{margin-bottom: 20px; font-size: 20px; color: #333;}
 
 		footer{}
 
@@ -181,10 +185,10 @@
 		   		</div>
 		   		<div class="frame last-frame">
 		   		  <img class="" src="images/ManuelCastillo1.jpg" alt="" />
-		   		  <p class="artist"><img src="images/artistIcon.svg" alt="artist icon" class="artistIcon"> Alirio Oramas</p>
-				  <p class="dimensions"><img src="images/sizeIcon.png" alt="dimensions icon" class="sizeIcon"> 80 X 90 CMS</p>
+		   		  <p class="artist"><img src="images/artistIcon.svg" alt="artist icon" class="artistIcon"> Esteban Villaparedes</p>
+				  <p class="dimensions"><img src="images/sizeIcon.png" alt="dimensions icon" class="sizeIcon"> 110 X 150 CMS</p>
 				  <p class="paintType"><img src="images/paintingIcon.svg" alt="painting icon" class="sizeIcon"> Acrilico / Tela</p>
-				  <p class="year"><img src="images/calendarIcon.png" alt="calendar icon" class="sizeIcon"> 1981</p>
+				  <p class="year"><img src="images/calendarIcon.png" alt="calendar icon" class="sizeIcon"> 1991</p>
 		   		</div>
 		    </div>
 
@@ -235,6 +239,12 @@
 				  <p class="year"><img src="images/calendarIcon.png" alt="calendar icon" class="sizeIcon"> 1981</p>
 		   		</div>
 		    </div>
+		    <div id="contact-div" class="martop100">
+		    	<h1>Contáctenos</h1> 
+		    	<p>Contáctenos por correo electronico o WhatsApp para cual pregunta que tienen, para saber precios, o solo para decir hola.</p>
+		    	<a href="mailto:obrasdearte2010@gmail.com" class="mailLink"><img src="images/emailIcon.svg" class="emailIcon" alt=""> obrasdearte2010@gmail.com</a><br><br>
+		    	<a class="mailLink"><img src="images/waIcon.svg" class="emailIcon" alt=""> +58 412-321-7774</a>
+		    </div>
 
 			</div><!-- container -->
 		</div><!-- row -->
@@ -247,16 +257,26 @@
 		<script>
 			$(document).ready(function() {
 
+				// open overlay and big picture
 				$(".frame").click(function() {
 					$("#overlay").css("display", "flex");
 					$(this).contents().clone().appendTo('.bigPic');
 				});
 
+				// close overlay
 				$("#closeOverlay").click(function() {
 					$("#overlay").css("display", "none");
 					$('.bigPic').empty();
 
 				});
+
+				// smooth scroll
+				$("#CTA").click(function(){
+			    	$('html, body').animate({
+			     	scrollTop: $("#contact-div").offset().top
+			      }, 1000);
+		   });
+
 			});		
 		</script>
 	</body>
