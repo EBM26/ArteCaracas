@@ -89,7 +89,20 @@
 
 		#overlay{width: 100%; height: 100%; position: fixed; top: 0; left: 0; right: 0; bottom: 0; cursor: pointer; background-color:rgba(119, 119, 119, 0.7); display: none; justify-content: center; align-items: center; -webkit-animation: fadein .5s; animation: fadein .5s; z-index: 200; overflow: scroll;}
 		.bigPic{max-width: 45%; margin: auto; position: absolute; padding: 40px; background: #fff;}
-		#closeOverlay{  position: absolute;  content: "\00d7"; color: #fff;}
+		#CTA{float: right; border-radius: 5px; background: #081e79; color: #f7cf46; font-size: 20px;
+		     text-align: center; padding: 10px 0; width: 200px; cursor: pointer; margin-top: 15px;
+		 	   transition: all .2s ease-in-out;}
+		#closeOverlay {position: absolute; display: inline-block; width: 50px; height: 50px; overflow: hidden;
+					  z-index: 1000; right: 15%; top: 5%;}
+		#closeOverlay:hover::before, #closeOverlay:hover::after{background: #bf2c30;}
+		#closeOverlay::before, #closeOverlay::after{content: ""; position: absolute; height: 2px; width: 100%;
+													 top: 50%; left: 0; margin-top: -1px; background: #fff;}
+		#closeOverlay::before{-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg);
+							 -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg);}
+		#closeOverlay::after{-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg); 
+							-ms-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform: rotate(-45deg);}
+		#closeOverlay.big{-webkit-transform: scale(3); -moz-transform: scale(3); -ms-transform: scale(3);
+						 -o-transform: scale(3); transform: scale(3);}
 
 
 		.bodyRow{padding: 120px 0 80px;}	
@@ -101,7 +114,7 @@
 		.frame p, .bigPic p{color: #333; font-size: 18px; margin-top: 10px; text-align: left;}
 		.mid-frame{margin: 0 3%; border-color: #081e79;}
 		.last-frame{border-color: #bf2c30;}
-		.frame:hover{transform: scale(1.1);}
+		.frame:hover, #CTA:hover{transform: scale(1.1);}
 		.topP{color: #333; font-size: 22px; margin-bottom: 40px;}
 		.artistIcon{max-width: 20px; margin-right: 5px; vertical-align: -1px;}
 		.sizeIcon{max-width: 16px; margin-right: 5px; vertical-align: -1px;}
@@ -135,10 +148,8 @@
 			<div class="row">
 				<div class="container">
 					<img src="images/Arte-Caracas-Logo.jpg" alt="Arte Caracas Logo" class="headerLogo">
-					<div class="rightHeader">
 
-						<div id="CTA"></div>
-					</div>
+					<div id="CTA">contáctenos</div>
 					<div class="clear"></div>
 				</div><!-- container -->
 			</div><!-- row -->
@@ -146,11 +157,7 @@
 		<div id="overlay">
 			<div id="closeOverlay"></div>
 			<div class="bigPic">
-				<img class="bigImage" src="" alt="" />
-		   		<p><img src="images/artistIcon.svg" alt="artist icon" class="artistIcon"> <span class="bigArtist"></span></p>
-				<p><img src="images/sizeIcon.png" alt="dimensions icon" class="sizeIcon"> <span class="bigDimensions"></span></p>
-				<p><img src="images/paintingIcon.svg" alt="painting icon" class="sizeIcon"> <span class="bigPaintType"></span></p>
-				<p><img src="images/calendarIcon.png" alt="calendar icon" class="sizeIcon"> <span class="bigYear"></span></p>
+			
 			</div>
 		</div>
 		<div class="row bodyRow">
@@ -241,9 +248,15 @@
 			$(document).ready(function() {
 
 				$(".frame").click(function() {
-
+					$("#overlay").css("display", "flex");
+					$(this).contents().clone().appendTo('.bigPic');
 				});
 
+				$("#closeOverlay").click(function() {
+					$("#overlay").css("display", "none");
+					$('.bigPic').empty();
+
+				});
 			});		
 		</script>
 	</body>
